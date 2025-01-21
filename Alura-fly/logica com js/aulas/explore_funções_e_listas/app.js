@@ -6,13 +6,22 @@ let paragrafo = document.querySelector('p'); */
 paragrafo.innerHTML = 'Escolha um número entre 1 e 10'; */
 
 let listaNumerosSorteados = [];
+let numeroLimite = 10;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
 //função para exibir o texto na ela
-function exibirTextoNaTela(tag,texto) {
+function exibirTextoNaTela(tag, texto) {
     let elemento = document.querySelector(tag);
     elemento.innerHTML = texto;
+    if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.3; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    };
 };
 
 function mensagemInicial(){
@@ -48,7 +57,12 @@ function verificarChute() {
 };
 
 function gerarNumeroAleatorio() {
-    let numeroEscolhido = parseInt(Math.random() * 10 + 1);
+    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+    let elementosNaLista = listaNumerosSorteados.length;
+
+    if (elementosNaLista == numeroLimite) {
+        listaNumerosSorteados = [];
+    };
     //includes = verifica de o elemento está na lista
     if (listaNumerosSorteados.includes(numeroEscolhido)) {
         return gerarNumeroAleatorio();
@@ -70,4 +84,4 @@ function reiniciarJogo(){
     tentativas = 1;
     mensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled' , true);
-}; 
+};
