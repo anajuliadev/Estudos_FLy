@@ -7,6 +7,13 @@ function sortear(){
     let numero;
 
     
+    if (de >= ate || quantidade > ate) {
+        alert('Opa! Verifique se você colocou os números corretamente');
+        return;
+    };
+
+
+
     /*for (inicialização; condição; incremento)*/
     for (let i = 0; i < quantidade; i++){
         numero = obterNumeroAleatorio(de, ate);
@@ -21,6 +28,9 @@ function sortear(){
     
     document.getElementById('exibirResultado').innerHTML = sorteados;
     alterarStatusBotao();
+    
+    /* verificarNumero(de, ate); */
+
   /*   let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`; */
 
@@ -61,3 +71,10 @@ function reiniciar () {
     document.getElementById('exibirResultado').innerHTML = 'Nenhum até agora';
     alterarStatusBotao();
 };
+
+/* function verificarNumero(de, ate){
+    if (de >= ate) {
+        alert('Opa! Verifique se você colocou os números corretamente');
+        reiniciar();
+    }
+} */
