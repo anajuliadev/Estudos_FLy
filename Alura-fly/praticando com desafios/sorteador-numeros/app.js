@@ -10,13 +10,19 @@ function sortear(){
     /*for (inicialização; condição; incremento)*/
     for (let i = 0; i < quantidade; i++){
         numero = obterNumeroAleatorio(de, ate);
+
+        while (sorteados.includes(numero)) {
+            numero = obterNumeroAleatorio(de, ate);
+        }
+
         sorteados.push(numero);
+
     };
     
+    document.getElementById('exibirResultado').innerHTML = sorteados;
   /*   let resultado = document.getElementById('resultado');
     resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sorteados}</label>`; */
 
-    document.getElementById('exibirResultado').innerHTML = sorteados;
 
 
     /* let numero = obterNumeroAleatorio(de, ate);
