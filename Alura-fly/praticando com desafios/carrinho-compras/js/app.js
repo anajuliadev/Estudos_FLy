@@ -8,13 +8,11 @@ function adicionar() {
 
     //calc o subtotal por produto
     let preco = quantidade * valorUnitario;
+    //adicionar ao carrinho
     let carrinho = document.getElementById('lista-produtos');
     carrinho.innerHTML = carrinho.innerHTML + `<section          class="carrinho__produtos__produto">
-          <span class="texto-azul">${quantidade}X</span> ${nomeProduto} <span class="texto-azul">R$ ${preco}</span>
+        <span class="texto-azul">${quantidade}X</span> ${nomeProduto} <span class="texto-azul">R$ ${preco}</span>
         </section>`
-
-    //adicionar ao carrinho
-
     //atualizar o total dos produtos
 };
 
