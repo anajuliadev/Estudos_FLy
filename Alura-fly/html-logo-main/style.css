@@ -10,7 +10,6 @@ body {
     height: 100vh;
     box-sizing: border-box; /* nada sai do body */
     background-color: #000000;
-    width: 100%vh;
 }
 
 main{
@@ -36,26 +35,43 @@ p{
     color: #ffffff;
 }
 
-.botoes{
-    margin: 50px 0 0 0;
+.box_botoes{
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0 0 0;
 }
-a{
-    background-color: #22D4FD;
+.botoes_info h2{
+    font-size: 15px;
+    font-weight: 400;
+}
+.botoes{
+    display: flex;
+    gap: 20px;
+}
+.botoes img{
+    width: 17px;
+}
+.botoes a{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #22D4FD;
     width: 100px;
     padding: 15px 48px;
-    border-radius: 8px;
-    color: #000000;
+    border-radius: 5px;
+    color: #ffffff;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
 }
 
-.box_img{
-
+.botoes a:hover{
+    background-color: #272727;
 }
 
-img{
-
+footer p{
+    background-color: #22D4FD;
+    color: #000000;
 }
