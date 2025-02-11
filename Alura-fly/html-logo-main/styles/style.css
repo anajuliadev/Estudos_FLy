@@ -1,38 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #ffffff;
+    --cor-tercearia: #22D4FD;
+}
+
 *{
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", serif;
 }
+.cabecalho{
+    margin:40px 0 0 200px;
+}
+nav{
+    height: 50px;
+    display: flex;
+    justify-content: left;
+    gap: 50px;
 
+}
+.cabecalho_menu{
+    font-weight: 600;
+    color: var(--cor-tercearia);
+    text-decoration: none;
+    
+
+}
 body {
     height: 100vh;
     box-sizing: border-box; /* nada sai do body */
-    background-color: #000000;
+    background-color: var(--cor-primaria);
 }
 
 main{
-    height: 100%;
+    height: calc(100% - 100px);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 200px;
+    gap: 80px;
 
-    margin: 0 20%;
 }
 .box_info{
     font-family: "Montserrat", serif;
+    width: 50%;
 }
 h1{
     font-family: "Krona One", serif;
-    color: #ffffff;
+    color: var(--cor-secundaria);
 }
 .titulo_destaque{
-    color: #22D4FD;
+    color: var(--cor-tercearia);
 }
 
 p{
-    color: #ffffff;
+    color: var(--cor-secundaria);
 }
 
 .box_botoes{
@@ -57,11 +83,11 @@ p{
     gap: 5px;
     align-items: center;
     background-color: transparent;
-    border: 1px solid #22D4FD;
+    border: 1px solid var(--cor-tercearia);
     width: 100px;
     padding: 15px 48px;
     border-radius: 5px;
-    color: #ffffff;
+    color: var(--cor-secundaria);
     font-weight: 600;
     text-decoration: none;
     text-align: center;
@@ -70,8 +96,26 @@ p{
 .botoes a:hover{
     background-color: #272727;
 }
+.box_img{
+    width: 50%;
+}
 
+footer{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-tercearia);
+    font-size: 1.5rem;
+}
 footer p{
-    background-color: #22D4FD;
-    color: #000000;
+    color: var(--cor-primaria);
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+   .main{
+    flex-direction: column;
+   } 
 }
